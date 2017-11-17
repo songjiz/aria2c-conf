@@ -7,7 +7,7 @@ uri  = URI('https://raw.githubusercontent.com/ngosang/trackerslist/master/tracke
 list = Net::HTTP.get(uri)
 trackers = list.split(/\n/).reject(&:empty?).join(',')
 conf = File.read('aria2.conf.example')
-conf.gsub!(/(?<=bt-tracker[=]")(.*)(?=")/, trackers)
+conf.gsub!(/(?<=bt-tracker[=])(\n)/, trackers)
 conf.gsub!('$HOME', Dir.home)
 File.open('aria2.conf', 'w') { |f| f.puts conf }
 
