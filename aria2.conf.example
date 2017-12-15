@@ -40,6 +40,7 @@ input-file=$HOME/.aria2/aria2.session
 save-session=$HOME/.aria2/aria2.session
 # 定时保存会话, 0为退出时才保存,默认:0
 save-session-interval=60
+log=$HOME/.aria2/aria2.log
 
 # [RPC]
 # 设置的RPC授权令牌
