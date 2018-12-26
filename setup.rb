@@ -3,7 +3,7 @@ require 'fileutils'
 require 'net/http'
 require 'uri'
 
-uri  = URI('https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt')
+uri  = URI('https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_ip.txt')
 list = Net::HTTP.get(uri)
 trackers = list.split(/\n/).reject(&:empty?).join(',')
 conf = File.read('aria2.conf.example')
